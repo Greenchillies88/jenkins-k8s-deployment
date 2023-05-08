@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "Greenchillies88/react-app"
+    dockerimagename = "greenchillies88/react-app"
     dockerImage = ""
   }
 
@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/Greenchillies88/jenkins-k8s-deployment.git'
+        git branch: 'main', credentialsId: 'github-credentials', url: 'https://github.com/Greenchillies88/jenkins-k8s-deployment.git'
       }
     }
 
